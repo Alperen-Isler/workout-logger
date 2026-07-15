@@ -1,3 +1,113 @@
-body{
-    background-color: #CCC;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* -------------------------------------- CSS RESET ABOVE -------------------------------------- */
+
+:root{
+    --green-primary: #9cad78;
+    --green-light: #e2ebce;
+    --green-muted: #cdd6bb;
+
+    --background-main: #ffffff;
+    --background-sidebar: #faf9f7;
+    --border: #e8e8df;
+
+    --text-primary: #3c3c36;
+    --text-secondary: #939790;
+    --text-completed: #9d9d9a;
+    --icon: #262f20;
+
+    --priority-medium-bg: #f0debc;
+    --priority-medium-text: #795c32;
+
+    --priority-high-bg: #ebdadc;
+    --priority-high-text: #823737;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 30% 80%;
+    grid-template-rows: 7% 88% 5%;
+}
+
+.title{
+    display: flex;
+    gap: 10px;
+    padding-left: 2%;
+    align-items: center;
+    background-color: var(--green-primary);
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#dumbell-svg{
+    fill: white;
+    width: 50px;
+    height: auto;
+}
+
+.sidebar{
+    background-color: var(--background-sidebar);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.main{
+    background-color: var(--background-main);
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+}
+
+.footer{
+    background-color: grey;
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    justify-items: center;
+    align-content: center;
+    color: white;
+    font-size: 1.3rem;
 }
