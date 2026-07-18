@@ -159,7 +159,6 @@ h1, h2, h3, h4, h5, h6 {
 .program:hover{
   background-color: var(--green-muted);
   cursor: pointer;
-  font-weight: bold;
 }
 
 .program:hover button{
@@ -181,4 +180,23 @@ button:hover{
 
 .svg-edit:hover{
   fill: white;
+}
+
+.dashboard{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#dashboard-svg{
+  width: 50px;
+  height: auto;
+}
+
+.dashboard:hover{
+  background-color: var(--green-muted);
+  cursor: pointer;
 }
