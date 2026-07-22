@@ -1,0 +1,456 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* -------------------------------------- CSS RESET ABOVE -------------------------------------- */
+
+:root{
+  --green-primary: #9cad78;
+  --green-light: #e2ebce;
+  --green-muted: #cdd6bb;
+  --green-hover: rgb(93, 139, 93);
+
+  --background-main: #ffffff;
+  --background-sidebar: #faf9f7;
+  --border: #e8e8df;
+
+  --text-primary: #3c3c36;
+  --text-secondary: #939790;
+  --text-completed: #9d9d9a;
+  --icon: #262f20;
+
+  --priority-medium-bg: #f0debc;
+  --priority-medium-text: #795c32;
+
+  --priority-high-bg: #ebdadc;
+  --priority-high-text: #823737;
+}
+
+.container{
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 7% 88% 5%;
+}
+
+.title{
+  display: flex;
+  gap: 10px;
+  padding-left: 2%;
+  align-items: center;
+  background-color: var(--green-primary);
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0px 1px 5px grey;
+  z-index: 1;
+}
+
+#dumbell-svg{
+  fill: white;
+  width: 50px;
+  height: auto;
+}
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: var(--background-sidebar);
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  overflow: scroll;
+}
+
+.programs{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.program{
+  display: flex;
+  gap: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.program p{
+  margin-right: auto;
+}
+
+.add-btn{
+  display: flex;
+  align-self: center;
+  gap: 5px;
+}
+
+.add-btn:hover{
+  color: green;
+}
+
+.add-btn:hover .svg-add{
+  fill: green;
+}
+
+.main{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: var(--background-main);
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+  overflow: scroll;
+}
+
+.footer{
+  background-color: var(--green-primary);
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  justify-items: center;
+  align-content: center;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.program:hover{
+  background-color: var(--green-muted);
+  cursor: pointer;
+}
+
+.program:hover button{
+  background-color: var(--green-muted);
+}
+
+button{
+  border: none;
+  background-color: var(--background-sidebar);
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.svg-delete:hover{
+  fill: red;
+}
+
+.svg-edit:hover{
+  fill: white;
+}
+
+.dashboard{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#dashboard-svg{
+  width: 50px;
+  height: auto;
+}
+
+.dashboard:hover{
+  background-color: var(--green-muted);
+  cursor: pointer;
+}
+
+.log-weight-btn{
+  font-size: 1.2rem;
+  background-color: var(--green-primary);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px grey;
+  font-weight: bold;
+}
+
+.bigger{
+  font-size: 1.5rem;
+}
+
+.log-weight-btn:hover{
+  cursor: pointer;
+  background-color: var(--green-light);
+  color: var(--green-hover);
+}
+
+.train-now-section{
+  display: flex;
+  font-size: 1.2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-muted);
+  border: solid 1px var(--green-primary);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#start-workout-svg{
+  fill: black;
+}
+
+.main.home-section{
+  display: grid;
+  grid-template-rows: 20% 40% 40%;
+  grid-template-columns: 70% 30%;
+}
+
+.train-now-section{
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  box-shadow: 0px 2px 2px grey;
+}
+
+.routines-section{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: var(--green-muted);
+  border-radius: 10px;
+  margin: 10px;
+  border: solid 1px var(--green-primary);
+  box-shadow: 0px 2px 2px grey;
+}
+
+.weight-section{
+  padding: 20px;
+  display: flex;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: var(--green-muted);
+  border-radius: 10px;
+  margin: 10px;
+  border: solid 1px var(--green-primary);
+  box-shadow: 0px 2px 2px grey;
+}
+
+.summary-section{
+  padding: 20px;
+  display: flex;
+  font-size: 1.2rem;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--green-muted);
+  border-radius: 10px;
+  margin: 10px;
+  border: solid 1px var(--green-primary);
+  box-shadow: 0px 2px 2px grey;
+  gap: 10px;
+}
+
+.history-sidebar{
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  gap: 5px;
+  border-radius: 10px;
+}
+
+.history-sidebar:hover{
+  background-color: var(--green-muted);
+  cursor: pointer;
+}
+
+.current-weight-card{
+  display: flex;
+  height: 180px;
+  width: 240px;
+  padding: 2%;
+  border-radius: 5px;
+  border: solid 1px var(--green-primary);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--green-light);
+}
+
+.summary-card{
+  display: flex;
+  height: 180px;
+  width: 240px;
+  padding: 2%;
+  border-radius: 5px;
+  border: solid 1px var(--green-primary);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--green-light);
+}
+
+.routine-cards{
+  display: grid;
+  grid-auto-flow: column;
+  overflow: scroll;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 5px;
+}
+
+.card-title{
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.routine-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: var(--green-light);
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  border: 1px solid var(--green-primary);
+}
+
+.current-weight{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.start-program-btn{
+  width: 150px;
+  font-size: 1.2rem;
+  background-color: var(--green-primary);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px grey;
+  font-weight: bold;
+}
+
+.start-program-btn:hover{
+  cursor: pointer;
+  background-color: var(--green-muted);
+  color: var(--green-hover);
+}
+
+.new-program-btn{
+  background-color: var(--green-light);
+  height: 110px;
+}
+
+.bold{
+  font-size: bold;
+}
+
+.new-program-btn:hover .new-program-btn-svg{
+  fill: var(--green-hover);
+}
+
+.new-program-btn-svg{
+  width: 50px;
+  height: 50px;
+}
+
+.routine-card-title{
+  font-size: 1.5rem;
+}
+
+.weight-section{
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+}
+
+.recent-workouts-section{
+  padding: 20px;
+  display: flex;
+  font-size: 1.2rem;
+  flex-direction: column;
+  background-color: var(--green-muted);
+  border-radius: 10px;
+  margin: 10px;
+  border: solid 1px var(--green-primary);
+  box-shadow: 0px 2px 2px grey;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  overflow: scroll;
+  gap: 5px;
+}
+
+.summary-section{
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.recent-workout-card{
+  display: flex;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  padding-right: 50px;
+  background-color: var(--green-light);
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  border: solid 1px var(--green-primary);
+}
+
+.recent-workout-card:hover{
+  background-color: var(--green-primary);
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
